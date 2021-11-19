@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import './Styles/style.scss';
+import '../styles/style.scss';
 
 // import { useState, useEffect } from 'react';
 
 const SearchEntry = (props) => { 
+  // props.setModal(false);
 
   return ( 
     <section className="searchEntry">
