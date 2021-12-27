@@ -23,11 +23,12 @@ function Recipe( { open, setIsOpen, onClose, meal, clickedItem, setClickedItem }
 
     setIsOpen(true);
 
+    processIngredients();
+    // console.log("Clicked Item is ... ", clickedItem);
+
   }
 
   const processIngredients = () => {
-    // const ingredients = [];
-    // const measures = [];
     const MaxNum = 21;
 
     for(let i=1; i < MaxNum; i++) {
@@ -35,17 +36,14 @@ function Recipe( { open, setIsOpen, onClose, meal, clickedItem, setClickedItem }
         break;        
       } else {        
         finalIngredients.push(meal["strMeasure" + i] + " " +meal["strIngredient" + i]);
-        finalIngredients = [...finalIngredients];
+        // finalIngredients = [...finalIngredients];
       }
     }
 
     return finalIngredients;
   }
 
-  useEffect(() => {
-    setFinalIngredients(processIngredients());
-    console.log(finalIngredients);
-  }, [clickedItem]);
+  
 
   return (   
     <>

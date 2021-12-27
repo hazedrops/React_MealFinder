@@ -13,7 +13,7 @@ function SearchResults({ open, setIsOpen, onClose, recipes, clickedItem, setClic
   return (
     <section className="searchResults">
       {recipes.meals && recipes.meals.map(meal => (
-      <Recipe open={open} setIsOpen={setIsOpen} onClose={onClose} meal={meal} key={meal.idMeal} clickedItem={clickedItem} setClickedItem={setClickedItem} />        
+        <Recipe open={open} setIsOpen={setIsOpen} onClose={onClose} meal={meal} key={meal.idMeal} clickedItem={clickedItem} setClickedItem={setClickedItem} />        
       ))}
     </section>     
   )
