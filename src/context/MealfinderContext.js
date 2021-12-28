@@ -27,6 +27,12 @@ export const MealfinderProvider = ({ children }) => {
     // console.log(typeof(tempRecipes));
   }
 
+  // const handleChange = (e) => {
+  //   // e.preventDefault();
+
+  //   setSearchTerm(searchTerm);
+  // }  
+
   const handleSearch = (e) => {
     e.preventDefault();
 
@@ -103,6 +109,7 @@ export const MealfinderProvider = ({ children }) => {
         isLoading,
         isOpen,
         clickedItem,
+        setSearchTerm,
         handleSearch,
         handleClose,
         // Functions here!!
