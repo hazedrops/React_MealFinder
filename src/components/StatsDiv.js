@@ -4,17 +4,18 @@ import MealfinderContext from '../context/MealfinderContext';
 function StatsDiv() {
   const {searchTerm, recipes, isLoading} = useContext(MealfinderContext);
   
-  if(searchTerm.length === 0) {
-      <h4>Please enter a search term...</h4>
+  if(isLoading) {
+      <h4>Loading...</h4>
   }
 
-  if(!recipes && !isLoading) {
+  if(!recipes.meals) {
     return (
-      <h4>No recipes found...</h4>
+      <h6>No recipes found...</h6>
     )
   }
   
-  return (
+  // return isLoading ? (
+  return (searchTerm.length !== 0) && (
     <div className="statsDiv">
     { recipes.meals && <p className="stats">Displaying {recipes.meals.length} results.</p>}
     </div>   

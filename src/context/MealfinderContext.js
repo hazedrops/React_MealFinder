@@ -9,14 +9,16 @@ export const MealfinderProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [clickedItem, setClickedItem] = useState('');
 
-  useEffect(() => {
-    fetchRecipes();
-  }, []); 
+  // useEffect(() => {
+  //   fetchRecipes();
+  // }, []); 
 
   // Fetch recipe
   const fetchRecipes = async (query) => {
+    console.log("Query here!!!", query);
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
     const data = await response.json();
+    console.log(data);
     
     setIsLoading(true);
 
@@ -112,6 +114,9 @@ export const MealfinderProvider = ({ children }) => {
         setSearchTerm,
         handleSearch,
         handleClose,
+        setIsLoading,
+        setIsOpen,
+        setClickedItem,
         // Functions here!!
 
       }}

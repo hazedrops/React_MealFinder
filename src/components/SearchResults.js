@@ -1,8 +1,9 @@
-import { computeHeadingLevel } from '@testing-library/react';
-import React from 'react'
-import Recipe from './Recipe'
+import React, { useContext } from 'react';
+import Recipe from './Recipe';
+import MealfinderContext from '../context/MealfinderContext';
 
-function SearchResults({ open, setIsOpen, onClose, recipes, clickedItem, setClickedItem }) {
+function SearchResults() {  
+  const { searchTerm, isOpen, setIsOpen, handleClose, recipes, clickedItem, setClickedItem } = useContext(MealfinderContext);
 
   // console.log("In the search result");
   console.log(recipes.meals);
@@ -10,10 +11,10 @@ function SearchResults({ open, setIsOpen, onClose, recipes, clickedItem, setClic
 
   // setModal(false);
 
-  return (
+  return (searchTerm.length !== 0) && (
     <section className="searchResults">
       {recipes.meals && recipes.meals.map(meal => (
-        <Recipe open={open} setIsOpen={setIsOpen} onClose={onClose} meal={meal} key={meal.idMeal} clickedItem={clickedItem} setClickedItem={setClickedItem} />        
+        <Recipe open={isOpen} setIsOpen={setIsOpen} onClose={handleClose} meal={meal} key={meal.idMeal} clickedItem={clickedItem} setClickedItem={setClickedItem} />        
       ))}
     </section>     
   )

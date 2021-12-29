@@ -17,7 +17,7 @@ function App() {
         <Header />
         <SearchEntry />
         <StatsDiv />         
-        {/* { (recipes && !isLoading) ? <SearchResults recipes={recipes} open={isOpen} setIsOpen={setIsOpen} onClose={handleClose} clickedItem={clickedItem} setClickedItem={setClickedItem} /> : <div>Loading...</div> } */}
+        <SearchResults />
         {/* <DetailModalContainer setIsModalOpen={setIsModalOpen} /> */}
         {/* <DetailModalContainer /> */}
         <Footer />

@@ -12,6 +12,8 @@ const SearchEntry = () => {
 
   const handleChange = (e) => {
     const { value } = e.target;
+
+    console.log({value});
     
     setSearchTerm(value);
   }
