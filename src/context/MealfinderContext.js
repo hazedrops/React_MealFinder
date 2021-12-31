@@ -8,6 +8,7 @@ export const MealfinderProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [clickedItem, setClickedItem] = useState('');
+  const [finalIngredients, setFinalIngredients] = useState([]);
 
   // useEffect(() => {
   //   fetchRecipes();
@@ -15,10 +16,13 @@ export const MealfinderProvider = ({ children }) => {
 
   // Fetch recipe
   const fetchRecipes = async (query) => {
-    console.log("Query here!!!", query);
+    if(!query) {
+      query = null;
+    }
+
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     
     setIsLoading(true);
 
@@ -44,6 +48,7 @@ export const MealfinderProvider = ({ children }) => {
   const handleClose = () => {
     setIsOpen(false);
     setClickedItem('');
+    setFinalIngredients([]);
     console.log('in the handleClose');
   }
 
@@ -111,14 +116,14 @@ export const MealfinderProvider = ({ children }) => {
         isLoading,
         isOpen,
         clickedItem,
+        finalIngredients,
         setSearchTerm,
         handleSearch,
         handleClose,
         setIsLoading,
         setIsOpen,
         setClickedItem,
-        // Functions here!!
-
+        setFinalIngredients
       }}
   >
     { children }

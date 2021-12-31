@@ -26,77 +26,99 @@ $font-stack: 'Roboto', Arial, sans-serif;
 html,
 body {
   display: flex;
+  flex-direction: column;
+  // position: relative;
   justify-content: center;
+  align-items: center;
   background-image: url(https://images.unsplash.com/photo-1488477181946-6428a0291777?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80);
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
   background-color: $background-color;
   color: $font-color;
   width: 100vw;
-  min-height: 100vh;
+  height: auto;
+  // min-height: 100%;
   font-family: $font-stack;
   font-size: 22px;
-
-  main {
+  
+  #root {
     display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: flex-start;
+    justify-content: center;
     position: relative;
-    flex-direction: column;
+
+    main{
+      display: flex;
+      position: relative;
+      width: 80%;
+      max-width: 750px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: auto;
+      min-height: 80%;
+      margin-top: 10vh;
+      margin-bottom: 10vh;
+      background-color: $container-background-color;
+      border-radius: 20px;
+
+      header {
+        margin-top: 5vh;
+
+        h1 {
+          text-align: center;
+        }
+      }
+
+      .statsDiv .stats {
+        margin-bottom: 0;
+        font-size: 0.7rem;
+      }
+
+      .footer {
+        margin-top: auto;
+        margin-bottom: 5vh;
+        align-self: center;
+        margin-bottom: 2rem;
+        font-size: 0.8rem !important;
+
+        a {
+          text-decoration: none;
+          color: $link-color;
+          font-weight: 600;
+        }
+
+        a:hover {
+          color: $link-hover-color;
+        }
+
+        a:visited {
+          color: $link-visited-color;
+        }
+      }
+
+      @include mq(768px) {
+        width: 70vw;
+        max-width: 70%;
+      }
+
+      @include mq(1025px) {
+        width: 80vw;
+        max-width: 80%;
+      }
+    }  
+  }
+
+  #portal {
+    display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    height: 80vh;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-    background-color: $container-background-color;
-    border-radius: 20px;
-
-    header {
-      margin-top: 5vh;
-
-      h1 {
-        text-align: center;
-      }
-    }
-
-    .statsDiv .stats {
-      margin-bottom: 0;
-      font-size: 0.7rem;
-    }
-
-    .footer {
-      margin-top: auto;
-      margin-bottom: 5vh;
-      align-self: center;
-      background-color: yellow;
-      margin-bottom: 2rem;
-      font-size: 0.8rem !important;
-
-      a {
-        text-decoration: none;
-        color: $link-color;
-        font-weight: 600;
-      }
-
-      a:hover {
-        color: $link-hover-color;
-      }
-
-      a:visited {
-        color: $link-visited-color;
-      }
-    }
-
-    @include mq(768px) {
-      width: 70vw;
-      max-width: 70vw;
-    }
-
-    @include mq(1025px) {
-      width: 60vw;
-      max-width: 60vw;
-    }
-  } 
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+  }
 }
 
 // .overlay {

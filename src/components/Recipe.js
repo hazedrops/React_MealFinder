@@ -1,20 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import DetailModal from './DetailModal';
+import MealfinderContext from '../context/MealfinderContext';
 
-const MODAL_STYLES = {
-  position: 'fixed',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  backgroundColor: '#FFF',
-  padding: '50px',
-  zIndex: 1000
-}
+// const MODAL_STYLES = {
+//   position: 'fixed',
+//   top: '50%',
+//   left: '50%',
+//   transform: 'translate(-50%, -50%)',
+//   backgroundColor: '#FFF',
+//   padding: '50px',
+//   zIndex: 1000
+// }
 
-function Recipe( { open, setIsOpen, onClose, meal, clickedItem, setClickedItem } ) {
-  let [finalIngredients, setFinalIngredients] = useState([]);
+function Recipe({ meal }) {
+  const { isOpen, setIsOpen, handleClose, recipes, clickedItem, setClickedItem, finalIngredients, setFinalIngredients } = useContext(MealfinderContext);
 
-  console.log('open: ', open);
+  let tempFinalIngredients = [];
+
+  // console.log('open: ', open);
 
   // const [clickedItem, setClickedItem] = useState(null);
 
@@ -29,21 +32,30 @@ function Recipe( { open, setIsOpen, onClose, meal, clickedItem, setClickedItem }
   }
 
   const processIngredients = () => {
-    const MaxNum = 21;
+    const max = 21;
 
-    for(let i=1; i < MaxNum; i++) {
-      if(meal["strIngredient" + i] == '' && meal["strMeasure" + i] == '') {
-        break;        
-      } else {        
-        finalIngredients.push(meal["strMeasure" + i] + " " +meal["strIngredient" + i]);
-        // finalIngredients = [...finalIngredients];
+    for(let i=1; i <max; i++) {
+      if(meal["strIngredient" + i] !== '' && meal["strMeasure" + i] !== '') {
+        tempFinalIngredients.push(meal["strMeasure" + i] + " " +meal["strIngredient" + i]);
       }
     }
 
-    return finalIngredients;
+    setFinalIngredients(tempFinalIngredients);
+
+
+    // let len = tempFinalIngredients.length;
+
+    // tempFinalIngredients =  tempFinalIngredients.splice(0, len);
+    // console.log("hERE", tempFinalIngredients);
+
+    // setFinalIngredients(tempFinalIngredients.splice(0, len));
+
+    // return finalIngredients;
   }
 
-  
+  // useEffect(() => {
+  //   setFinalIngredients(finalIngredients)
+  // }, [finalIngredients]);
 
   return (   
     <>
@@ -57,10 +69,10 @@ function Recipe( { open, setIsOpen, onClose, meal, clickedItem, setClickedItem }
         </div>
       </div>
 
-      {open && clickedItem === meal.idMeal ?         
-        <DetailModal open={open} setIsOpen={setIsOpen} onClose={onClose} meal={meal} style={MODAL_STYLES}>
+      {isOpen && clickedItem === meal.idMeal ?         
+        <DetailModal open={isOpen} setIsOpen={setIsOpen} onClose={handleClose} meal={meal} >
           <div className="detailModal">
-            <span className="closeModalButton" onClick={onClose}>X</span>
+            <span className="closeModalButton" onClick={handleClose}>X</span>
             <h1 className="modalTitle">{meal.strMeal}</h1>
             <div className="modalImgIng">
               <div className="modalImgDiv">

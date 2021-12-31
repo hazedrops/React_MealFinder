@@ -2,9 +2,9 @@ import ReactDOM from 'react-dom'
 import Overlay from './Overlay'
 
 
-
 function DetailModal({ open, setIsOpen, onClose, children, meal }) {
   console.log("in the Detail modal");
+
 
   if(!open) return null;
 
@@ -21,6 +21,6 @@ function DetailModal({ open, setIsOpen, onClose, children, meal }) {
     )
 }
 
-export default DetailModal
+export default DetailModal;
  
  

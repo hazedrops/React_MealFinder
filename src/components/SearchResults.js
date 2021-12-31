@@ -14,7 +14,7 @@ function SearchResults() {
   return (searchTerm.length !== 0) && (
     <section className="searchResults">
       {recipes.meals && recipes.meals.map(meal => (
-        <Recipe open={isOpen} setIsOpen={setIsOpen} onClose={handleClose} meal={meal} key={meal.idMeal} clickedItem={clickedItem} setClickedItem={setClickedItem} />        
+        <Recipe meal={meal} />        
       ))}
     </section>     
   )

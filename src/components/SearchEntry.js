@@ -13,7 +13,7 @@ const SearchEntry = () => {
   const handleChange = (e) => {
     const { value } = e.target;
 
-    console.log({value});
+    console.log("Value: ", value);
     
     setSearchTerm(value);
   }

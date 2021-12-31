@@ -8,14 +8,15 @@ function StatsDiv() {
       <h4>Loading...</h4>
   }
 
-  if(!recipes.meals) {
+  if(searchTerm && !recipes.meals) {
     return (
-      <h6>No recipes found...</h6>
+      <div className="statsDiv">
+        <p className="stats">No recipes found...</p>
+      </div>
     )
   }
   
-  // return isLoading ? (
-  return (searchTerm.length !== 0) && (
+  return (
     <div className="statsDiv">
     { recipes.meals && <p className="stats">Displaying {recipes.meals.length} results.</p>}
     </div>   

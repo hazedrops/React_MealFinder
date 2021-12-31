@@ -1,12 +1,14 @@
 .detailModal {
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: absolute;
   z-index: 100;
+  top: 0;
+  left: 0;
   top: calc(100vh / 2);
   left: calc(100vw / 2);
-  // transform: translate(-50%, -50%);
-  max-width: 70%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
   height: 80%;
   overflow: auto;
   background-image: rgba(132, 0, 0, 0.5);
@@ -22,17 +24,17 @@
   .modalTitle {
     text-align: center;
     margin-bottom: 0.5rem;
-    font-size: 0.75rem;
+    font-size: 1.5rem;
     font-weight: 600;
 
     @include mq(768px) {
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
   }
 
   .modalImgIng {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     max-height: 30%;
     margin-bottom: 1rem;
 
@@ -58,14 +60,14 @@
       }
     }
 
-    .modalIngredientDiv {
+    .modalIngDiv {
       max-width: 60%;
       overflow: hidden;
-      font-size: 0.6rem;
+      font-size: .75rem;
 
       @include mq(1025px) {
         // margin-top: 0.8rem;
-        font-size: 0.75rem;
+        // font-size: 1rem;
       }
     }
   }
