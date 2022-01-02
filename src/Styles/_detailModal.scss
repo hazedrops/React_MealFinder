@@ -1,15 +1,14 @@
 .detailModal {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  z-index: 100;
-  top: 0;
-  left: 0;
+  position: fixed;
+  z-index: 100;  
   top: calc(100vh / 2);
   left: calc(100vw / 2);
-  transform: translate(-50%, -50%);
-  max-width: 90%;
-  height: 80%;
+  transform: translate(-50%, -50%);  
+  width: 70%;
+  max-width: 800px;
+  height: 80vh;
   overflow: auto;
   background-image: rgba(132, 0, 0, 0.5);
   background-color: #fff;
@@ -23,7 +22,7 @@
 
   .modalTitle {
     text-align: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
     font-size: 1.5rem;
     font-weight: 600;
 
@@ -34,9 +33,14 @@
 
   .modalImgIng {
     display: flex;
-    justify-content: space-evenly;
-    max-height: 30%;
-    margin-bottom: 1rem;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    @include mq(680px) {
+      flex-direction: row;
+      justify-content: space-around;            
+    }
 
     @include mq(1025px) {
       max-height: 20vw;
@@ -52,16 +56,30 @@
     }
 
     .modalImgDiv {
-      max-width: 35%;
-      max-height: 35%;
+      width: 40%;
+      // max-height: 30vh;
+      margin: 0 auto;
+      margin-bottom: .5rem;
+      padding: 0;
 
       img {
         width: 100%;
+
+        @include mq(768px) {
+          width: 100%;
+        }
+      }
+
+      @include mq(768px) {
+        width: auto;
+        max-width: 30vh;
+        max-height: 30vh;
       }
     }
 
     .modalIngDiv {
-      max-width: 60%;
+      width: 60%;
+      max-height: 30vh;
       overflow: hidden;
       font-size: .75rem;
 
@@ -69,12 +87,18 @@
         // margin-top: 0.8rem;
         // font-size: 1rem;
       }
+
+      @include mq(768px) {
+        width: auto;
+      }
     }
   }
 
-  .modalDirectionsDiv {
-    .modalDirectionTitle {
-      font-size: 0.8rem;
+  .modalDirDiv {
+    margin-top: 2em;
+
+    .modalDirTitle {
+      font-size: 1rem;
       font-weight: 500;
       font-style: italic;
       line-height: 1rem;
@@ -83,11 +107,13 @@
     }
 
     .modalDirections {
-      font-size: 0.5rem;
+      margin-top: .5rem;
+      font-size: 0.75rem;      
+      line-height: 1rem;
+    }
 
-      @include mq(768px) {
-        font-size: 0.75rem;
-      }
+    @include mq(768px) {
+      margin-top: 2em;
     }
   }
 }
