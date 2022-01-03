@@ -49,14 +49,14 @@ function Recipe({ meal }) {
                 <img src={meal.strMealThumb} alt={meal.strMeal} />
               </div>
               <div className="modalIngDiv">
-                <span><strong>Ingredients</strong></span>
+                <span className="modalIngredientTitle">Ingredients</span>
                 {finalIngredients.map(ingredient => (
                     <li>{ingredient}</li>
                 ))}                  
               </div>
             </div>  
             <div className="modalDirDiv">
-              <span className="modalDirTitle"><strong>Directions</strong></span>
+              <span className="modalDirTitle">Directions</span>
               <p className="modalDirections">{meal.strInstructions}</p>                  
             </div>
           </div>

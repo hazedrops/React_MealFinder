@@ -13,7 +13,7 @@
   background-image: rgba(132, 0, 0, 0.5);
   background-color: #fff;
   color: #444;
-  padding: 1rem;
+  padding: 1.5rem;
 
   .closeModalButton {
     align-self: flex-end;
@@ -34,12 +34,13 @@
   .modalImgIng {
     display: flex;
     flex-direction: column;
+    // justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
 
-    @include mq(680px) {
+    @include mq(768px) {
       flex-direction: row;
-      justify-content: space-around;            
+      justify-content: space-between;     
     }
 
     @include mq(1025px) {
@@ -48,7 +49,7 @@
 
     .modalIngredientTitle {
       font-size: 0.8rem;
-      font-weight: 500;
+      font-weight: 600;
       font-style: italic;
       line-height: 1rem;
       margin-bottom: 0.5rem;
@@ -56,14 +57,12 @@
     }
 
     .modalImgDiv {
-      width: 40%;
-      // max-height: 30vh;
-      margin: 0 auto;
-      margin-bottom: .5rem;
-      padding: 0;
+      display: flex;
+      margin: 0 0 1.5rem 1rem;
 
       img {
-        width: 100%;
+        width: 80%;
+        margin: 0 auto;
 
         @include mq(768px) {
           width: 100%;
@@ -71,16 +70,16 @@
       }
 
       @include mq(768px) {
-        width: auto;
-        max-width: 30vh;
-        max-height: 30vh;
+        width: 100%;
+        max-width: 35vh;
+        max-height: 35vh;
+        margin: 0 0 0 1rem;;
       }
     }
 
     .modalIngDiv {
       width: 60%;
       max-height: 30vh;
-      overflow: hidden;
       font-size: .75rem;
 
       @include mq(1025px) {
@@ -90,7 +89,16 @@
 
       @include mq(768px) {
         width: auto;
+        overflow: hidden;
+
       }
+    }
+
+    @include mq(768px) {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1.5rem;
     }
   }
 
@@ -99,7 +107,7 @@
 
     .modalDirTitle {
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 600;
       font-style: italic;
       line-height: 1rem;
       margin-bottom: 0.3rem;

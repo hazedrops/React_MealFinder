@@ -9,6 +9,7 @@ $logo-green: #3cba54;
 $link-color: #2a2346;
 $link-hover-color: #544b72;
 $link-visited-color: #8177a1;
+
 $font-stack: 'Roboto', Arial, sans-serif;
 
 @mixin mq($size) {
@@ -27,7 +28,6 @@ html,
 body {
   display: flex;
   flex-direction: column;
-  // position: relative;
   justify-content: center;
   align-items: center;
   background-image: url(https://images.unsplash.com/photo-1488477181946-6428a0291777?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80);
@@ -53,8 +53,8 @@ body {
     main{
       display: flex;
       position: relative;
-      width: 80%;
-      max-width: 980px;
+      width: 70%;
+      max-width: 860px;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
