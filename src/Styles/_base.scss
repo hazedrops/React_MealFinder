@@ -99,16 +99,6 @@ body {
           color: $link-visited-color;
         }
       }
-
-      // @include mq(768px) {
-      //   // width: 70vw;
-      //   max-width: 90%;
-      // }
-
-      // @include mq(1025px) {
-      //   // width: 80vw;
-      //   max-width: 90%;
-      // }
     }  
   }
 
@@ -121,13 +111,3 @@ body {
     height: 100%;
   }
 }
-
-// .overlay {
-//   display: none;
-//   background: rgba(0, 0, 0, 0.6);
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100vw;
-//   height: 100vh;
-// }

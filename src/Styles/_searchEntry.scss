@@ -1,52 +1,48 @@
 .searchEntry {
-  // @include flexColumn;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  // flex:1 1 0%;
   padding-top: 40px;
 
-  // .logo {
-  //   letter-spacing: -5px;
-  //   font-size: 2rem;
-  //   font-weight: 600;
-  //   margin-bottom: 0.5rem;
-  //   @include mq(768px) {
-  //     font-size: 4rem;
-  //     letter-spacing: -10px;
-  //   }
-  // }
-
   .searchBar {
-    width: 80%;
+    width: 20%;
+    background: pink;
     display: flex;
     justify-content: flex-end;
-		flex: 1 1 0%;
+    flex-grow: 1;
+    // flex-shrink: 1;
+		// flex: 1 1 0%;
     border: 2px solid $search-bar-border;
     border-radius: 200px;
     padding: 0.15rem 0.25rem 0.15rem 0.75rem;
     margin: 0.75rem;
 
-    @include mq(768px) {
-      width: 60%;
-    }
+    // @media only screen and (max-width: 480px) {
+    //   width: auto;
+    // }
 
-    @include mq(1025px) {
-      width: 50%;
-    }
+    // @include mq(768px) {
+    //   width: 80%;
+    // }
+
+    // @include mq(1025px) {
+    //   width: 50%;
+    // }
 
     input[type='search'] {
-      // background-color: $background-color;
       background-color: transparent;
       flex-grow: 1;
-      font-size: 0.8rem;
+      font-size: 1rem;
       text-align: left;
       letter-spacing: 0.05rem;
       outline: none;
 			border: none;
       // min-width: 150px;
 
-      @include mq(768px) {
-        font-size: 1.25rem;
-      }
+      // @include mq(768px) {
+      //   font-size: 1.25rem;
+      // }
     }
 
     .button {

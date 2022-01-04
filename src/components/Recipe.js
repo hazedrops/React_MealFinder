@@ -22,11 +22,12 @@ function Recipe({ meal }) {
     const max = 21;
 
     for(let i=1; i <max; i++) {
-      if(meal["strIngredient" + i] !== '' && meal["strMeasure" + i] !== '') {
+      if(meal["strIngredient" + i] !== "" && meal["strMeasure" + i] !== "") {
         tempFinalIngredients.push(meal["strMeasure" + i] + " " +meal["strIngredient" + i]);
       }
     }
 
+    console.log("Ing:", tempFinalIngredients);
     setFinalIngredients(tempFinalIngredients);
   }
 

@@ -14,8 +14,7 @@ function SearchResults() {
 
   // setModal(false);
 
-  return (searchTerm.length !== 0) && (
-    // <Container className="searchResults">
+  return (searchTerm.length !== 0 && recipes ) && (
     <Container className="searchResults">
       <Row>
         {recipes.meals && recipes.meals.map(meal => (

@@ -16,9 +16,7 @@ function App() {
         <Header />
         <SearchEntry />
         <StatsDiv />         
-        <SearchResults />
-        {/* <DetailModalContainer setIsModalOpen={setIsModalOpen} /> */}
-        {/* <DetailModalContainer /> */}
+        <SearchResults />        
         <Footer />
       </main>
     </MealfinderProvider>

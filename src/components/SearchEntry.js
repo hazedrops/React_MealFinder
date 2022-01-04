@@ -8,9 +8,11 @@ import '../styles/style.scss';
 // import { useState, useEffect } from 'react';
 
 const SearchEntry = () => { 
-  const { searchTerm, setSearchTerm, handleSearch, isLoading } = useContext(MealfinderContext);
+  const { searchTerm, setRecipes, setSearchTerm, handleSearch } = useContext(MealfinderContext);
 
   const handleChange = (e) => {
+    setRecipes("");
+
     const { value } = e.target;
 
     console.log("Value: ", value);
