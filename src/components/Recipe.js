@@ -33,7 +33,7 @@ function Recipe({ meal }) {
 
   return (   
     <>
-      <Col className="mb-3" md={12} lg={6} xl={4} onClick={handleClick}>
+      <Col className="mb-3" sm={12} md={6} xl={4} onClick={handleClick}>
         <a target="_blank">
           <img src={meal.strMealThumb} alt={meal.strMeal} className="resultImg" dataname={meal.idMeal} />
         </a>

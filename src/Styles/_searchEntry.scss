@@ -1,35 +1,17 @@
 .searchEntry {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  // flex:1 1 0%;
   padding-top: 40px;
 
-  .searchBar {
-    width: 20%;
-    background: pink;
+  .searchBar {    
     display: flex;
-    justify-content: flex-end;
-    flex-grow: 1;
-    // flex-shrink: 1;
-		// flex: 1 1 0%;
+    justify-content: flex-end;    
+		flex: 1 1 0%;
     border: 2px solid $search-bar-border;
     border-radius: 200px;
     padding: 0.15rem 0.25rem 0.15rem 0.75rem;
     margin: 0.75rem;
-
-    // @media only screen and (max-width: 480px) {
-    //   width: auto;
-    // }
-
-    // @include mq(768px) {
-    //   width: 80%;
-    // }
-
-    // @include mq(1025px) {
-    //   width: 50%;
-    // }
-
+    
     input[type='search'] {
       background-color: transparent;
       flex-grow: 1;
@@ -37,12 +19,12 @@
       text-align: left;
       letter-spacing: 0.05rem;
       outline: none;
-			border: none;
-      // min-width: 150px;
+      border: none;
+      padding-right: .2rem;
+    }
 
-      // @include mq(768px) {
-      //   font-size: 1.25rem;
-      // }
+    input:focus {
+			border-right: 2px solid darken($search-bar-border, 10%);
     }
 
     .button {
